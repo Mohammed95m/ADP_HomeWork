@@ -10,9 +10,11 @@ namespace Remoting
     {
         bool Add(News news);
         bool Remove(int newsID);
-        bool UpdatePhoto(int newsID,string imagePath);
+        bool UpdatePhoto(int newsID, string image, string extention)
         ICollection<News> GetAll();
+        News GetNews(int newsID);
         ICollection<News> GetByAgency(int agencyID);
 
     }
+ 
 }

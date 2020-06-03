@@ -34,7 +34,7 @@ namespace ADP_HomeWork
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
