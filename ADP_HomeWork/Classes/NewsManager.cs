@@ -40,7 +40,7 @@ namespace ADP_HomeWork.Classes
                     Directory.CreateDirectory(uploadpath);
                     string filename = Guid.NewGuid().ToString() +news.ImageExtenttion;
                     File.WriteAllBytes(Path.Combine(uploadpath, filename), bytes);
-                    News.ImagePath = "Images\\" + filename;
+                    News.ImagePath = uploadpath + "\\Images\\" + filename;
                 }
                 _context.SaveChanges();
                
@@ -127,7 +127,7 @@ namespace ADP_HomeWork.Classes
                     Directory.CreateDirectory(uploadpath);
                     string filename = Guid.NewGuid().ToString() + extention;
                     File.WriteAllBytes(Path.Combine(uploadpath, filename), bytes);
-                    news.ImagePath = "Images\\" +  filename;
+                    news.ImagePath = uploadpath+"\\Images\\" +  filename;
                     _context.SaveChanges();
                     return true;
                 }

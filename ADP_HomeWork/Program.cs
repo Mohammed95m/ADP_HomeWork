@@ -23,7 +23,8 @@ namespace ADP_HomeWork
             ChannelServices.RegisterChannel(ch1, false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(NewsManager),
                 "NewsManager.soap", WellKnownObjectMode.SingleCall);
-
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(AgencyManager),
+                "AgencyManager.soap", WellKnownObjectMode.SingleCall);
             CreateWebHostBuilder(args).Build().Run();
 
           

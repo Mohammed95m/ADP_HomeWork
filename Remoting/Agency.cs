@@ -15,5 +15,9 @@ namespace Remoting
         public string CityName { get; set; }
         public int LanguageID { get; set; }
         public string LanguageName { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

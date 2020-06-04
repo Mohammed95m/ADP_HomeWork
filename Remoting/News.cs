@@ -26,6 +26,7 @@ namespace Remoting
         public int Ranking { get; set; }
         public int AgencyID { get; set; }
         public string Agency { get; set; }
+      
 
 
     }
