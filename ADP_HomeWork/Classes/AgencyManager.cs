@@ -1,4 +1,5 @@
 ﻿using ADP_HomeWork.DataBase;
+ 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.EntityFrameworkCore;
@@ -14,24 +15,25 @@ namespace ADP_HomeWork.Classes
 
     public class AgencyManager : MarshalByRefObject, IAgencyManager
     {
-     private   NewsDataContext _context;
         public AgencyManager()
         {
-            _context = new NewsDataContext();
         }
      
         public bool Add(Agency agency)
         {
             if (agency != null)
             {
-                _context.Agencies.Add(new DataBase.Tables.Agency
+                using (var _context = new NewsDataContext())
                 {
-                    CityID = agency.CityID,
-                    LanguageID = agency.LanguageID,
-                    Name = agency.Name
-                });
-                _context.SaveChanges();
-                return true;
+                    _context.Agencies.Add(new DataBase.Tables.Agency
+                    {
+                        CityID = agency.CityID,
+                        LanguageID = agency.LanguageID,
+                        Name = agency.Name
+                    });
+                    _context.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }
@@ -40,19 +42,23 @@ namespace ADP_HomeWork.Classes
         {
             if (agency == null) return false;
             if (agency.ID <= 0) return false;
-
-            var Agency = _context.Agencies.SingleOrDefault(s => s.ID == agency.ID);
-            if (Agency == null) return false;
-            Agency.CityID = agency.CityID;
-            Agency.LanguageID = agency.LanguageID;
-            Agency.Name = agency.Name;
-            _context.SaveChanges();
-            return true;
+            using (var _context = new NewsDataContext())
+            {
+                var Agency = _context.Agencies.SingleOrDefault(s => s.ID == agency.ID);
+                if (Agency == null) return false;
+                Agency.CityID = agency.CityID;
+                Agency.LanguageID = agency.LanguageID;
+                Agency.Name = agency.Name;
+                _context.SaveChanges();
+                return true;
+            }
         }
 
         public Agency getByID(int agencyID)
         {
-            return _context.Agencies.Include(s => s.Language)
+            using (var _context = new NewsDataContext())
+            {
+                return _context.Agencies.Include(s => s.Language)
                  .Include(s => s.City)
                  .Select(s => new Agency
                  {
@@ -64,11 +70,14 @@ namespace ADP_HomeWork.Classes
                      Name = s.Name
                  })
                  .SingleOrDefault(s => s.ID == agencyID);
+            }
         }
 
         public Agency getByName(string agencyName)
         {
-            return _context.Agencies.Include(s => s.Language)
+            using (var _context = new NewsDataContext())
+            {
+                return _context.Agencies.Include(s => s.Language)
                   .Include(s => s.City)
                   .Select(s => new Agency
                   {
@@ -80,11 +89,14 @@ namespace ADP_HomeWork.Classes
                       Name = s.Name
                   })
                   .SingleOrDefault(s => s.Name == agencyName);
+            }
         }
 
         ICollection<Agency> IAgencyManager.GetAll()
         {
-            return _context.Agencies.Include(s => s.Language)
+            using (var _context = new NewsDataContext())
+            {
+                return _context.Agencies.Include(s => s.Language)
                  .Include(s => s.City)
                  .Select(s => new Agency
                  {
@@ -96,16 +108,46 @@ namespace ADP_HomeWork.Classes
                      Name = s.Name
                  })
                  .ToArray();
+            }
         }
 
         public bool Remove(int agencyID)
         {
-            if (agencyID <= 0) return false;
-            var Agency = _context.Agencies.SingleOrDefault(s => s.ID == agencyID);
-            if (Agency == null) return false;
-            _context.Agencies.Remove(Agency);
-            _context.SaveChanges();
-            return true;
+            using (var _context = new NewsDataContext())
+            {
+                if (agencyID <= 0) return false;
+                var Agency = _context.Agencies.SingleOrDefault(s => s.ID == agencyID);
+                if (Agency == null) return false;
+                _context.Agencies.Remove(Agency);
+                _context.SaveChanges();
+                return true;
+            }
+        }
+
+
+
+        ICollection<DataEntriy> IAgencyManager.GetCities()
+        {
+            using (var _context = new NewsDataContext())
+            {
+                return _context.Cities.Select(s => new DataEntriy
+                {
+                    ID = s.ID,
+                    Name = s.Name
+                }).ToArray();
+            }
+        }
+
+        ICollection<DataEntriy> IAgencyManager.GetLanguages()
+        {
+            using (var _context = new NewsDataContext())
+            {
+                return _context.Languages.Select(s => new DataEntriy
+                {
+                    ID = s.ID,
+                    Name = s.Name
+                }).ToArray();
+            }
         }
     }
 }

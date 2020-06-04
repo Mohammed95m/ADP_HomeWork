@@ -63,12 +63,18 @@
             this.BtnNewNews = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDeleteNews = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUpdateImage = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.CbGetByAgency = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.BtnShowAgencies = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage12 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemRibbonSearchEdit1 = new DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit();
             this.repositoryItemRibbonSearchEdit2 = new DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -80,9 +86,6 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.CbGetByAgency = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -92,13 +95,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbGetByAgency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRibbonSearchEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRibbonSearchEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbGetByAgency)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -137,6 +140,7 @@
             // 
             this.GvNews.GridControl = this.GcNews;
             this.GvNews.Name = "GvNews";
+            this.GvNews.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GvNews_RowClick);
             // 
             // layoutControlGroup1
             // 
@@ -172,9 +176,14 @@
             this.BtnDeleteNews,
             this.BtnUpdateImage,
             this.barButtonItem1,
-            this.barEditItem1});
+            this.barEditItem1,
+            this.BtnShowAgencies,
+            this.barButtonItem10,
+            this.barButtonItem12,
+            this.barButtonItem13,
+            this.barButtonItem14});
             this.ribbonControl11.Location = new System.Drawing.Point(12, 12);
-            this.ribbonControl11.MaxItemId = 10;
+            this.ribbonControl11.MaxItemId = 15;
             this.ribbonControl11.Name = "ribbonControl11";
             this.ribbonControl11.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage11,
@@ -239,6 +248,59 @@
             this.BtnUpdateImage.Name = "BtnUpdateImage";
             this.BtnUpdateImage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUpdateImage_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Get last 10 ";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "Get By Agency ";
+            this.barEditItem1.Edit = this.CbGetByAgency;
+            this.barEditItem1.Id = 9;
+            this.barEditItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barEditItem1.ImageOptions.SvgImage")));
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // CbGetByAgency
+            // 
+            this.CbGetByAgency.AutoHeight = false;
+            this.CbGetByAgency.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbGetByAgency.Name = "CbGetByAgency";
+            // 
+            // BtnShowAgencies
+            // 
+            this.BtnShowAgencies.Caption = "Show Agencies";
+            this.BtnShowAgencies.Id = 10;
+            this.BtnShowAgencies.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnShowAgencies.ImageOptions.SvgImage")));
+            this.BtnShowAgencies.Name = "BtnShowAgencies";
+            this.BtnShowAgencies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnShowAgencies_ItemClick);
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "New Agency";
+            this.barButtonItem10.Id = 11;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Update Agency";
+            this.barButtonItem12.Id = 12;
+            this.barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "barButtonItem13";
+            this.barButtonItem13.Id = 13;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "barButtonItem14";
+            this.barButtonItem14.Id = 14;
+            this.barButtonItem14.Name = "barButtonItem14";
+            // 
             // ribbonPage11
             // 
             this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -259,9 +321,7 @@
             // ribbonPage12
             // 
             this.ribbonPage12.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup4});
             this.ribbonPage12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPage12.ImageOptions.SvgImage")));
             this.ribbonPage12.Name = "ribbonPage12";
             this.ribbonPage12.Text = "Agency";
@@ -269,19 +329,9 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup4.ImageOptions.SvgImage")));
+            this.ribbonPageGroup4.ItemLinks.Add(this.BtnShowAgencies);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Add New";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup5.ImageOptions.SvgImage")));
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Delete";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // repositoryItemRibbonSearchEdit1
             // 
@@ -383,27 +433,6 @@
             this.barButtonItem8.Id = 3;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Get last 10 ";
-            this.barButtonItem1.Id = 8;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Caption = "Get By Agency ";
-            this.barEditItem1.Edit = this.CbGetByAgency;
-            this.barEditItem1.Id = 9;
-            this.barEditItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barEditItem1.ImageOptions.SvgImage")));
-            this.barEditItem1.Name = "barEditItem1";
-            // 
-            // CbGetByAgency
-            // 
-            this.CbGetByAgency.AutoHeight = false;
-            this.CbGetByAgency.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbGetByAgency.Name = "CbGetByAgency";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,13 +451,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbGetByAgency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRibbonSearchEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRibbonSearchEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbGetByAgency)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,8 +485,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit repositoryItemRibbonSearchEdit1;
         private DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit repositoryItemRibbonSearchEdit2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -469,6 +496,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox CbGetByAgency;
+        private DevExpress.XtraBars.BarButtonItem BtnShowAgencies;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
     }
 }
 

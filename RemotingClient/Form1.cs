@@ -53,19 +53,7 @@ namespace RemotingClient
             };
         }
 
-        private void GvNews_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                var news = GvNews.GetRow(e.RowHandle) as News;
-                MessageBox.Show(news.Title);
-            }
-            catch (Exception ex)
-            {
- 
-            }
-        
-        }
+     
 
         private void BtnNewNews_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -119,6 +107,27 @@ namespace RemotingClient
                 }
                
             }
+        }
+
+        private void GvNews_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            MessageBox.Show("clicked");
+            try
+            {
+                var news = GvNews.GetRow(e.RowHandle) as News;
+                FrmShowNews frm = new FrmShowNews(news);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void BtnShowAgencies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmAgencies frm = new FrmAgencies();
+            frm.ShowDialog();
         }
     }
 }

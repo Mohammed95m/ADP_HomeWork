@@ -1,4 +1,5 @@
-﻿using System;
+﻿ 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace Remoting
         Agency getByID(int agencyID);
         Agency getByName(string agencyName);
         ICollection<Agency> GetAll();
+        ICollection<DataEntriy> GetCities();
+        ICollection<DataEntriy> GetLanguages();
     }
 }

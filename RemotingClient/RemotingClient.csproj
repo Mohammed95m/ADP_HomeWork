@@ -65,11 +65,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUpdateNews.cs">
+    <Compile Include="FrmAgencies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUpdateNews.Designer.cs">
-      <DependentUpon>FrmUpdateNews.cs</DependentUpon>
+    <Compile Include="FrmAgencies.Designer.cs">
+      <DependentUpon>FrmAgencies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowNews.Designer.cs">
+      <DependentUpon>FrmShowNews.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAddNews.cs">
       <SubType>Form</SubType>
@@ -77,25 +83,19 @@
     <Compile Include="FrmAddNews.Designer.cs">
       <DependentUpon>FrmAddNews.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmShowUpdateNews.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmShowUpdateNews.Designer.cs">
-      <DependentUpon>FrmShowUpdateNews.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUpdateNews.resx">
-      <DependentUpon>FrmUpdateNews.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAgencies.resx">
+      <DependentUpon>FrmAgencies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowNews.resx">
+      <DependentUpon>FrmShowNews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddNews.resx">
       <DependentUpon>FrmAddNews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmShowUpdateNews.resx">
-      <DependentUpon>FrmShowUpdateNews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

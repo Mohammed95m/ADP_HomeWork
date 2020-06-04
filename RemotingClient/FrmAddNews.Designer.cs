@@ -30,53 +30,53 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddNews));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtRating = new DevExpress.XtraEditors.TextEdit();
+            this.TxtTitle = new DevExpress.XtraEditors.TextEdit();
+            this.CbAgency = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.TxtAbstrack = new DevExpress.XtraEditors.MemoEdit();
+            this.TxtText = new DevExpress.XtraEditors.MemoEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.TxtTitle = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.TxtRating = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.CbAgency = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.TxtAbstrack = new DevExpress.XtraEditors.MemoEdit();
-            this.TxtText = new DevExpress.XtraEditors.MemoEdit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtRating.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbAgency.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAbstrack.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtRating.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbAgency.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAbstrack.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,61 @@
             this.layoutControl1.Size = new System.Drawing.Size(744, 509);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(283, 450);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(136, 36);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 12;
+            this.simpleButton1.Text = "Add";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // TxtRating
+            // 
+            this.TxtRating.Location = new System.Drawing.Point(281, 388);
+            this.TxtRating.Name = "TxtRating";
+            this.TxtRating.Properties.Mask.BeepOnError = true;
+            this.TxtRating.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TxtRating.Size = new System.Drawing.Size(324, 20);
+            this.TxtRating.StyleController = this.layoutControl1;
+            this.TxtRating.TabIndex = 8;
+            // 
+            // TxtTitle
+            // 
+            this.TxtTitle.Location = new System.Drawing.Point(281, 178);
+            this.TxtTitle.Name = "TxtTitle";
+            this.TxtTitle.Size = new System.Drawing.Size(324, 20);
+            this.TxtTitle.StyleController = this.layoutControl1;
+            this.TxtTitle.TabIndex = 5;
+            // 
+            // CbAgency
+            // 
+            this.CbAgency.Location = new System.Drawing.Point(281, 412);
+            this.CbAgency.Name = "CbAgency";
+            this.CbAgency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbAgency.Size = new System.Drawing.Size(324, 20);
+            this.CbAgency.StyleController = this.layoutControl1;
+            this.CbAgency.TabIndex = 9;
+            // 
+            // TxtAbstrack
+            // 
+            this.TxtAbstrack.Location = new System.Drawing.Point(281, 202);
+            this.TxtAbstrack.Name = "TxtAbstrack";
+            this.TxtAbstrack.Size = new System.Drawing.Size(324, 90);
+            this.TxtAbstrack.StyleController = this.layoutControl1;
+            this.TxtAbstrack.TabIndex = 6;
+            // 
+            // TxtText
+            // 
+            this.TxtText.Location = new System.Drawing.Point(281, 296);
+            this.TxtText.Name = "TxtText";
+            this.TxtText.Size = new System.Drawing.Size(324, 88);
+            this.TxtText.StyleController = this.layoutControl1;
+            this.TxtText.TabIndex = 7;
             // 
             // Root
             // 
@@ -131,14 +186,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(233, 155);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 155);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(724, 11);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
@@ -146,14 +193,6 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(187, 155);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // TxtTitle
-            // 
-            this.TxtTitle.Location = new System.Drawing.Point(290, 178);
-            this.TxtTitle.Name = "TxtTitle";
-            this.TxtTitle.Size = new System.Drawing.Size(315, 20);
-            this.TxtTitle.StyleController = this.layoutControl1;
-            this.TxtTitle.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -164,13 +203,13 @@
             this.layoutControlItem2.Text = "Title";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(152, 13);
             // 
-            // emptySpaceItem4
+            // emptySpaceItem1
             // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 424);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(724, 14);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 155);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(724, 11);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
@@ -190,14 +229,6 @@
             this.layoutControlItem4.Text = "Text";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(152, 13);
             // 
-            // TxtRating
-            // 
-            this.TxtRating.Location = new System.Drawing.Point(290, 388);
-            this.TxtRating.Name = "TxtRating";
-            this.TxtRating.Size = new System.Drawing.Size(315, 20);
-            this.TxtRating.StyleController = this.layoutControl1;
-            this.TxtRating.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.TxtRating;
@@ -216,14 +247,6 @@
             this.layoutControlItem6.Text = "Agency";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(152, 13);
             // 
-            // emptySpaceItem5
-            // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(597, 166);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(127, 258);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
@@ -232,16 +255,21 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(114, 258);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // simpleButton1
+            // emptySpaceItem5
             // 
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(283, 450);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(136, 36);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Add";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(597, 166);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(127, 258);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 424);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(724, 14);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
             // 
@@ -276,32 +304,6 @@
             this.emptySpaceItem9.Size = new System.Drawing.Size(313, 40);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // CbAgency
-            // 
-            this.CbAgency.Location = new System.Drawing.Point(290, 412);
-            this.CbAgency.Name = "CbAgency";
-            this.CbAgency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbAgency.Size = new System.Drawing.Size(315, 20);
-            this.CbAgency.StyleController = this.layoutControl1;
-            this.CbAgency.TabIndex = 9;
-            // 
-            // TxtAbstrack
-            // 
-            this.TxtAbstrack.Location = new System.Drawing.Point(290, 202);
-            this.TxtAbstrack.Name = "TxtAbstrack";
-            this.TxtAbstrack.Size = new System.Drawing.Size(315, 90);
-            this.TxtAbstrack.StyleController = this.layoutControl1;
-            this.TxtAbstrack.TabIndex = 6;
-            // 
-            // TxtText
-            // 
-            this.TxtText.Location = new System.Drawing.Point(290, 296);
-            this.TxtText.Name = "TxtText";
-            this.TxtText.Size = new System.Drawing.Size(315, 88);
-            this.TxtText.StyleController = this.layoutControl1;
-            this.TxtText.TabIndex = 7;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -334,27 +336,27 @@
             this.Text = "FrmAddNews";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TxtRating.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbAgency.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAbstrack.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtRating.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbAgency.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAbstrack.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
