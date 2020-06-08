@@ -104,6 +104,7 @@ namespace RemotingClient
                     extention = Path.GetExtension(op.FileName);
                     bool IsUpdated = prox.UpdatePhoto(newsID, file, extention);
                     if (IsUpdated) MessageBox.Show("Updated");
+                    GcNews.DataSource = prox.GetAll();
                 }
                
             }
@@ -111,7 +112,6 @@ namespace RemotingClient
 
         private void GvNews_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            MessageBox.Show("clicked");
             try
             {
                 var news = GvNews.GetRow(e.RowHandle) as News;

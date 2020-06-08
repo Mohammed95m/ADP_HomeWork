@@ -36,8 +36,13 @@ namespace RemotingClient
             TxtRating.Text = news?.Ranking.ToString();
             TxtText.Text = news?.Text;
             TxtTitle.Text = news?.Title;
-            pictureBox1.Image = Image.FromFile(news?.ImagePath);
-            imagePath = news?.ImagePath;
+            if (news?.ImagePath != null)
+            {
+                pictureBox1.Image = Image.FromFile(news?.ImagePath);
+                imagePath = news?.ImagePath;
+            }
+            
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

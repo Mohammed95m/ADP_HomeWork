@@ -12,7 +12,10 @@ namespace Remoting
     {
         public News()
         {
-
+            Console.WriteLine("{0}:{1}:{2}:{3}", DateTime.Now.Hour.ToString(),
+               DateTime.Now.Minute.ToString(), DateTime.Now.Second.ToString(),
+               DateTime.Now.Millisecond.ToString());
+            Console.WriteLine("News.Constructor: object created");
         }
          public int ID { get; set; }
         public DateTime Date { get; set; }

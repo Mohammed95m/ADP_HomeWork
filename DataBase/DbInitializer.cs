@@ -12,7 +12,7 @@ namespace ADP_HomeWork.DataBase
         public static void Initialize(this NewsDataContext _context)
         {
 
-            _context.Database.EnsureCreated();
+            _context.Database.CreateIfNotExists() ;
             bool IsInit = false;
             if (!_context.Cities.Any())
             {
