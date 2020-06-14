@@ -8,6 +8,7 @@ using System.Text;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using RemotingClient;
+using WcfClient.NewsService1;
 
 namespace WcfClient
 {
@@ -18,23 +19,34 @@ namespace WcfClient
         public Form1()
         {
             InitializeComponent();
-          gridControl1.DataSource = prox.GetLast10();
+          gridControl1.DataSource = selectData(prox.GetLast10());
         }
 
         private void BtnAddRank_Click(object sender, EventArgs e)
         {
                
-              var result = XtraInputBox.Show("Enter a Rank as number", "Ranking", "0");
+         var result = XtraInputBox.Show("Enter a Rank as number", "Ranking", "0");
+            int rank;
+           bool isParesed= int.TryParse(result, out rank);
+            if (!isParesed)
+            {
+                MessageBox.Show("please insert Numbers only");
+            }
+            else
+            {
+                prox.AddRank(1, rank);
+            }
+      
         }
 
         private void BtnNPostive_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = prox.GetBestPositive(string.IsNullOrEmpty(TxtN.Text) ? 0 : int.Parse(TxtN.Text));
+            gridControl1.DataSource = selectData(prox.GetBestPositive(string.IsNullOrEmpty(TxtN.Text) ? 0 : int.Parse(TxtN.Text)));
         }
 
         private void BtnNNegative_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = prox.GetBestNegative(string.IsNullOrEmpty(TxtN.Text) ? 0 : int.Parse(TxtN.Text));
+            gridControl1.DataSource = selectData(prox.GetBestNegative(string.IsNullOrEmpty(TxtN.Text) ? 0 : int.Parse(TxtN.Text)));
         }
 
         private void BtnGetSimilar_Click(object sender, EventArgs e)
@@ -67,7 +79,21 @@ namespace WcfClient
 
         private void BtnLast10_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = prox.GetLast10();
+            gridControl1.DataSource = selectData(prox.GetLast10());
+        }
+        private List<dynamic> selectData(ICollection<News> newsList)
+        {
+            return newsList.Select(s => new
+            {
+                s.ID,
+                Ranking = s.Ranking.Select(a => a.Number).Sum(),
+                s.Text,
+                s.Abstract,
+                s.Date,
+                s.TotalReads,
+                s.Title
+
+            }).ToList<dynamic>();
         }
     }
 }
