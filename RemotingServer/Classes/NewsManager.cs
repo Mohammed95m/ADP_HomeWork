@@ -15,10 +15,6 @@ namespace ADP_HomeWork.Classes
  
         public NewsManager()
         {
-            //using (var _Context = new NewsDataContext())
-            //{
-            ////    _Context.Initialize();
-            //}
             Console.WriteLine("{0}:{1}:{2}:{3}", DateTime.Now.Hour.ToString(),
             DateTime.Now.Minute.ToString(), DateTime.Now.Second.ToString(),
             DateTime.Now.Millisecond.ToString());

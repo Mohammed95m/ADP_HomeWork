@@ -48,7 +48,7 @@ namespace WCFService
                 return _context.News
                 .Include("Agency")
                 .Include("Ranking")
-                 .OrderBy(s => s.Ranking.Select(a => a.Number).Sum()).Take(n).ToList();
+                 .OrderByDescending(s => s.Ranking.Select(a => a.Number).Sum()).Take(n).ToList();
             }
         }
 
