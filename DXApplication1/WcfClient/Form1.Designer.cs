@@ -186,6 +186,7 @@
             this.BtnLast10.StyleController = this.layoutControl1;
             this.BtnLast10.TabIndex = 4;
             this.BtnLast10.Text = "Get Last 10";
+            this.BtnLast10.Click += new System.EventHandler(this.BtnLast10_Click);
             // 
             // Root
             // 

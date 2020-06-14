@@ -7,13 +7,13 @@ namespace DataBase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class ranking : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ranking));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006070720210_init"; }
+            get { return "202006090622374_ranking"; }
         }
         
         string IMigrationMetadata.Source

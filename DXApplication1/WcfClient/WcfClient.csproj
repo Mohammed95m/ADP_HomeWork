@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\NewsService\Reference.cs">
+    <Compile Include="Connected Services\NewsService1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -66,10 +66,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShowNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowNews.designer.cs">
+      <DependentUpon>FrmShowNews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowNews.resx">
+      <DependentUpon>FrmShowNews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -82,20 +91,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
-    <None Include="Connected Services\NewsService\NewsService.wsdl" />
-    <None Include="Connected Services\NewsService\NewsService.xsd">
+    <None Include="Connected Services\NewsService1\NewsService.wsdl" />
+    <None Include="Connected Services\NewsService1\NewsService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\NewsService\NewsService1.xsd">
+    <None Include="Connected Services\NewsService1\NewsService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\NewsService\NewsService2.xsd">
+    <None Include="Connected Services\NewsService1\NewsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\NewsService\NewsService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\NewsService\WcfClient.NewsService.News.datasource">
+    <None Include="Connected Services\NewsService1\WcfClient.NewsService1.News.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -112,16 +118,16 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\NewsService\" />
+    <WCFMetadataStorage Include="Connected Services\NewsService1\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\NewsService\configuration91.svcinfo" />
+    <None Include="Connected Services\NewsService1\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\NewsService\configuration.svcinfo" />
+    <None Include="Connected Services\NewsService1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\NewsService\Reference.svcmap">
+    <None Include="Connected Services\NewsService1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

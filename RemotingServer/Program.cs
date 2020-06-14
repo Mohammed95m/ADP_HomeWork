@@ -1,6 +1,9 @@
 ﻿using ADP_HomeWork.Classes;
+using ADP_HomeWork.DataBase;
+using ADP_HomeWork.DataBase.Tables;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
@@ -29,6 +32,13 @@ namespace RemotingServer
               DateTime.Now.Minute.ToString(), DateTime.Now.Second.ToString(),
               DateTime.Now.Millisecond.ToString());
             Console.WriteLine("Server.Main: SingleCall Remoting is configured");
+
+            //var _Context = new NewsDataContext();
+            //foreach (var item in _Context.News)
+            //{
+            //    item.Ranking = new Collection<Rank>();
+            //}
+            //_Context.SaveChanges();
             Console.ReadKey();
         }
     }

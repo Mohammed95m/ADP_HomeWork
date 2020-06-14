@@ -25,6 +25,7 @@ namespace ADP_HomeWork.DataBase
         public static string ConnectionString { get; set; } = "Server=.;Database=ADP_HomeWork;Trusted_Connection=True;MultipleActiveResultSets=true";
         #region DbSets
         public DbSet<News> News { get; set; }
+        public DbSet<Rank>  Ranks { get; set; }
         public DbSet<Agency> Agencies { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<City> Cities { get; set; }

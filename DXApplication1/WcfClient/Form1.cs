@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
+using RemotingClient;
 
 namespace WcfClient
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
-        NewsService.NewsServiceClient prox = new NewsService.NewsServiceClient();
+        NewsService1.NewsServiceClient prox = new NewsService1.NewsServiceClient();
      
         public Form1()
         {
@@ -40,21 +41,33 @@ namespace WcfClient
         {
             if(!string.IsNullOrEmpty(txtAbstract.Text)&& !string.IsNullOrEmpty(TxtTitle.Text))
             {
-                gridControl1.DataSource = prox.GetSimilar(title: TxtTitle.Text, Abstract: txtAbstract.Text);
+                var data = prox.GetSimilar(title: TxtTitle.Text, Abstract: txtAbstract.Text);
+                FrmShowNews frm = new FrmShowNews(data);
+                frm.ShowDialog();
             }
             else
             {
                 if (!string.IsNullOrEmpty(txtAbstract.Text))
                 {
-                    gridControl1.DataSource = prox.GetSimilar(title: null, Abstract: txtAbstract.Text);
+                    var data = prox.GetSimilar(title: null, Abstract: txtAbstract.Text);
+                    FrmShowNews frm = new FrmShowNews(data);
+                    frm.ShowDialog();
 
                 }
                 if (!string.IsNullOrEmpty(TxtTitle.Text))
                 {
-                    gridControl1.DataSource = prox.GetSimilar(title: TxtTitle.Text, Abstract:null);
+                    var data = prox.GetSimilar(title: TxtTitle.Text, Abstract: null);
+                    FrmShowNews frm = new FrmShowNews(data);
+                    frm.ShowDialog();
+                 
                 }
 
             }
+        }
+
+        private void BtnLast10_Click(object sender, EventArgs e)
+        {
+            gridControl1.DataSource = prox.GetLast10();
         }
     }
 }

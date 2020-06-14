@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,7 +14,7 @@ namespace ADP_HomeWork.DataBase.Tables
     {
         public News()
         {
-            Ranking = new List<int>();
+            Ranking = new Collection<Rank>();
         }
         [DataMember]
         public int ID { get; set; }
@@ -30,7 +31,7 @@ namespace ADP_HomeWork.DataBase.Tables
         [DataMember]
         public int TotalReads { get; set; }
         [DataMember]
-        public List<int> Ranking { get; set; }
+        public ICollection<Rank> Ranking { get; set; }
         [DataMember]
         public int AgencyID { get; set; }
         [ForeignKey("AgencyID")]

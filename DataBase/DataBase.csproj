@@ -54,9 +54,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DbInitializer.cs" />
-    <Compile Include="Migrations\202006070720210_init.cs" />
-    <Compile Include="Migrations\202006070720210_init.designer.cs">
-      <DependentUpon>202006070720210_init.cs</DependentUpon>
+    <Compile Include="Migrations\202006090622374_ranking.cs" />
+    <Compile Include="Migrations\202006090622374_ranking.designer.cs">
+      <DependentUpon>202006090622374_ranking.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NewsDataContext.cs" />
@@ -65,14 +65,15 @@
     <Compile Include="Tables\City.cs" />
     <Compile Include="Tables\Language.cs" />
     <Compile Include="Tables\News.cs" />
+    <Compile Include="Tables\Rank.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006070720210_init.resx">
-      <DependentUpon>202006070720210_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006090622374_ranking.resx">
+      <DependentUpon>202006090622374_ranking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

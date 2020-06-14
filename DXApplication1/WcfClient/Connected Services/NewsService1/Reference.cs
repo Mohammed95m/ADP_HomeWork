@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfClient.NewsService {
+namespace WcfClient.NewsService1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -38,7 +38,7 @@ namespace WcfClient.NewsService {
         private string ImagePathField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WcfClient.NewsService.Rank[] RankingField;
+        private WcfClient.NewsService1.Rank[] RankingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TextField;
@@ -125,7 +125,7 @@ namespace WcfClient.NewsService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WcfClient.NewsService.Rank[] Ranking {
+        public WcfClient.NewsService1.Rank[] Ranking {
             get {
                 return this.RankingField;
             }
@@ -199,7 +199,7 @@ namespace WcfClient.NewsService {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WcfClient.NewsService.News NewsField;
+        private WcfClient.NewsService1.News NewsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NewsIDField;
@@ -231,7 +231,7 @@ namespace WcfClient.NewsService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WcfClient.NewsService.News News {
+        public WcfClient.NewsService1.News News {
             get {
                 return this.NewsField;
             }
@@ -280,32 +280,32 @@ namespace WcfClient.NewsService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NewsService.INewsService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NewsService1.INewsService")]
     public interface INewsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetLast10", ReplyAction="http://tempuri.org/INewsService/GetLast10Response")]
-        WcfClient.NewsService.News[] GetLast10();
+        WcfClient.NewsService1.News[] GetLast10();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetLast10", ReplyAction="http://tempuri.org/INewsService/GetLast10Response")]
-        System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetLast10Async();
+        System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetLast10Async();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetSimilar", ReplyAction="http://tempuri.org/INewsService/GetSimilarResponse")]
-        WcfClient.NewsService.News GetSimilar(string title, string Abstract);
+        WcfClient.NewsService1.News GetSimilar(string title, string Abstract);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetSimilar", ReplyAction="http://tempuri.org/INewsService/GetSimilarResponse")]
-        System.Threading.Tasks.Task<WcfClient.NewsService.News> GetSimilarAsync(string title, string Abstract);
+        System.Threading.Tasks.Task<WcfClient.NewsService1.News> GetSimilarAsync(string title, string Abstract);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetBestPositive", ReplyAction="http://tempuri.org/INewsService/GetBestPositiveResponse")]
-        WcfClient.NewsService.News[] GetBestPositive(int n);
+        WcfClient.NewsService1.News[] GetBestPositive(int n);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetBestPositive", ReplyAction="http://tempuri.org/INewsService/GetBestPositiveResponse")]
-        System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetBestPositiveAsync(int n);
+        System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetBestPositiveAsync(int n);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetBestNegative", ReplyAction="http://tempuri.org/INewsService/GetBestNegativeResponse")]
-        WcfClient.NewsService.News[] GetBestNegative(int n);
+        WcfClient.NewsService1.News[] GetBestNegative(int n);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/GetBestNegative", ReplyAction="http://tempuri.org/INewsService/GetBestNegativeResponse")]
-        System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetBestNegativeAsync(int n);
+        System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetBestNegativeAsync(int n);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewsService/AddRank", ReplyAction="http://tempuri.org/INewsService/AddRankResponse")]
         bool AddRank(int ID, int Rank);
@@ -315,12 +315,12 @@ namespace WcfClient.NewsService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface INewsServiceChannel : WcfClient.NewsService.INewsService, System.ServiceModel.IClientChannel {
+    public interface INewsServiceChannel : WcfClient.NewsService1.INewsService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NewsServiceClient : System.ServiceModel.ClientBase<WcfClient.NewsService.INewsService>, WcfClient.NewsService.INewsService {
+    public partial class NewsServiceClient : System.ServiceModel.ClientBase<WcfClient.NewsService1.INewsService>, WcfClient.NewsService1.INewsService {
         
         public NewsServiceClient() {
         }
@@ -341,35 +341,35 @@ namespace WcfClient.NewsService {
                 base(binding, remoteAddress) {
         }
         
-        public WcfClient.NewsService.News[] GetLast10() {
+        public WcfClient.NewsService1.News[] GetLast10() {
             return base.Channel.GetLast10();
         }
         
-        public System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetLast10Async() {
+        public System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetLast10Async() {
             return base.Channel.GetLast10Async();
         }
         
-        public WcfClient.NewsService.News GetSimilar(string title, string Abstract) {
+        public WcfClient.NewsService1.News GetSimilar(string title, string Abstract) {
             return base.Channel.GetSimilar(title, Abstract);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.NewsService.News> GetSimilarAsync(string title, string Abstract) {
+        public System.Threading.Tasks.Task<WcfClient.NewsService1.News> GetSimilarAsync(string title, string Abstract) {
             return base.Channel.GetSimilarAsync(title, Abstract);
         }
         
-        public WcfClient.NewsService.News[] GetBestPositive(int n) {
+        public WcfClient.NewsService1.News[] GetBestPositive(int n) {
             return base.Channel.GetBestPositive(n);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetBestPositiveAsync(int n) {
+        public System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetBestPositiveAsync(int n) {
             return base.Channel.GetBestPositiveAsync(n);
         }
         
-        public WcfClient.NewsService.News[] GetBestNegative(int n) {
+        public WcfClient.NewsService1.News[] GetBestNegative(int n) {
             return base.Channel.GetBestNegative(n);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.NewsService.News[]> GetBestNegativeAsync(int n) {
+        public System.Threading.Tasks.Task<WcfClient.NewsService1.News[]> GetBestNegativeAsync(int n) {
             return base.Channel.GetBestNegativeAsync(n);
         }
         

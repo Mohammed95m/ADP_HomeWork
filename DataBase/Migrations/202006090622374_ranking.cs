@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class ranking : DbMigration
     {
         public override void Up()
         {
@@ -58,16 +58,31 @@
                 .ForeignKey("dbo.Agencies", t => t.AgencyID, cascadeDelete: true)
                 .Index(t => t.AgencyID);
             
+            CreateTable(
+                "dbo.Ranks",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Number = c.Int(nullable: false),
+                        NewsID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.News", t => t.NewsID, cascadeDelete: true)
+                .Index(t => t.NewsID);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Ranks", "NewsID", "dbo.News");
             DropForeignKey("dbo.News", "AgencyID", "dbo.Agencies");
             DropForeignKey("dbo.Agencies", "LanguageID", "dbo.Languages");
             DropForeignKey("dbo.Agencies", "CityID", "dbo.Cities");
+            DropIndex("dbo.Ranks", new[] { "NewsID" });
             DropIndex("dbo.News", new[] { "AgencyID" });
             DropIndex("dbo.Agencies", new[] { "LanguageID" });
             DropIndex("dbo.Agencies", new[] { "CityID" });
+            DropTable("dbo.Ranks");
             DropTable("dbo.News");
             DropTable("dbo.Languages");
             DropTable("dbo.Cities");

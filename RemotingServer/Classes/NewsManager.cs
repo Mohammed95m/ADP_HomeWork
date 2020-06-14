@@ -15,10 +15,10 @@ namespace ADP_HomeWork.Classes
  
         public NewsManager()
         {
-            using (var _Context = new NewsDataContext())
-            {
-                _Context.Initialize();
-            }
+            //using (var _Context = new NewsDataContext())
+            //{
+            ////    _Context.Initialize();
+            //}
             Console.WriteLine("{0}:{1}:{2}:{3}", DateTime.Now.Hour.ToString(),
             DateTime.Now.Minute.ToString(), DateTime.Now.Second.ToString(),
             DateTime.Now.Millisecond.ToString());
@@ -38,7 +38,8 @@ namespace ADP_HomeWork.Classes
                         Text = news.Text,
                         Title = news.Title
                     };
-                    News.Ranking.Add(news?.Ranking ?? 0);
+                    int rank = news?.Ranking ?? 0;
+                    News.Ranking.Add(new DataBase.Tables.Rank { Number=rank});
                     _context.News.Add(News);
                     if (news?.Image?.Length > 0)
                     {
@@ -62,6 +63,7 @@ namespace ADP_HomeWork.Classes
             {
                 return _context.News
                 .Include("Agency")
+                 .Include("Ranking")
                 .Select(s => new Remoting.News
                 {
                     ID = s.ID,
@@ -71,7 +73,7 @@ namespace ADP_HomeWork.Classes
                     Date = s.Date,
                     ImagePath = s.ImagePath,
                     Text = s.Text,
-                    Ranking = s.Ranking.Select((r, n) => r * n).Sum() / s.Ranking.Sum(),
+                    Ranking = ((int?)s.Ranking.Select(a=>a.Number).Average())??0,
                     Title = s.Title,
                     TotalReads = s.TotalReads
                 }).OrderByDescending(s => s.Date).ToArray();
@@ -83,6 +85,7 @@ namespace ADP_HomeWork.Classes
             {
                 return _context.News
                 .Include("Agency")
+                              .Include("Ranking")
                 .Select(s => new Remoting.News
                 {
                     ID = s.ID,
@@ -92,7 +95,7 @@ namespace ADP_HomeWork.Classes
                     Date = s.Date,
                     ImagePath = s.ImagePath,
                     Text = s.Text,
-                    Ranking = s.Ranking.Select((r, n) => r * n).Sum() / s.Ranking.Sum(),
+                    Ranking = ((int?)s.Ranking.Select(a => a.Number).Average()) ?? 0,
                     Title = s.Title,
                     TotalReads = s.TotalReads
                 })?.SingleOrDefault(s => s.ID == newsID);
@@ -105,6 +108,7 @@ namespace ADP_HomeWork.Classes
             {
                 return _context.News
                .Include("Agency")
+                           .Include("Ranking")
                .Select(s => new Remoting.News
                {
                    ID = s.ID,
@@ -114,7 +118,7 @@ namespace ADP_HomeWork.Classes
                    Date = s.Date,
                    ImagePath = s.ImagePath,
                    Text = s.Text,
-                   Ranking = s.Ranking.Select((r, n) => r * n).Sum() / s.Ranking.Sum(),
+                   Ranking = ((int?)s.Ranking.Select(a => a.Number).Average()) ?? 0,
                    Title = s.Title,
                    TotalReads = s.TotalReads
                }).OrderByDescending(s => s.Date).Where(s => s.AgencyID == agencyID).ToArray();

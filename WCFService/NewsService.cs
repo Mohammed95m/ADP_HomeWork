@@ -21,7 +21,7 @@ namespace WCFService
                 var news = _context.News.SingleOrDefault(s => s.ID == ID);
                 if (news != null)
                 {
-                    news.Ranking.Add(Rank);
+                    _context.Ranks.Add(new ADP_HomeWork.DataBase.Tables.Rank { NewsID = ID, Number = Rank });
                     _context.SaveChanges();
                     return true;
                 }
@@ -36,7 +36,8 @@ namespace WCFService
 
                 return _context.News
                 .Include("Agency")
-                   .OrderBy(s => s.Ranking.Sum()).Take(n).ToList();
+                     .Include("Ranking")
+                   .OrderBy(s => s.Ranking.Select(a=>a.Number).Sum()).Take(n).ToList();
             }
         }
 
@@ -46,7 +47,8 @@ namespace WCFService
             {
                 return _context.News
                 .Include("Agency")
-                   .OrderByDescending(s => s.Ranking.Sum()).Take(n).ToList();
+                .Include("Ranking")
+                 .OrderBy(s => s.Ranking.Select(a => a.Number).Sum()).Take(n).ToList();
             }
         }
 
