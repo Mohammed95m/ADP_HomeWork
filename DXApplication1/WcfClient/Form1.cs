@@ -15,6 +15,7 @@ namespace WcfClient
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         NewsService1.NewsServiceClient prox = new NewsService1.NewsServiceClient();
+        int NewsID = 0;
      
         public Form1()
         {
@@ -28,15 +29,23 @@ namespace WcfClient
          var result = XtraInputBox.Show("Enter a Rank as number", "Ranking", "0");
             int rank;
            bool isParesed= int.TryParse(result, out rank);
-            if (!isParesed)
+            if (NewsID == 0)
             {
-                MessageBox.Show("please insert Numbers only");
+                MessageBox.Show("please select row");
             }
             else
             {
-                prox.AddRank(1, rank);
+                if (!isParesed)
+                {
+                    MessageBox.Show("please insert Numbers only");
+                }
+                else
+                {
+                    prox.AddRank(NewsID, rank);
+                    gridControl1.DataSource = selectData(prox.GetLast10());
+                    NewsID = 0;
+                }
             }
-      
         }
 
         private void BtnNPostive_Click(object sender, EventArgs e)
@@ -83,17 +92,39 @@ namespace WcfClient
         }
         private List<dynamic> selectData(ICollection<News> newsList)
         {
-            return newsList.Select(s => new
+            try
             {
-                s.ID,
-                Ranking = s.Ranking.Select(a => a.Number).Sum(),
-                s.Text,
-                s.Abstract,
-                s.Date,
-                s.TotalReads,
-                s.Title
+                return newsList.Select(s => new
+                {
+                    s.ID,
+                    Ranking = s?.Ranking?.Select(a => a.Number).DefaultIfEmpty()?.Average() ?? 0,
+                    s.Text,
+                    s.Abstract,
+                    s.Date,
+                    s.TotalReads,
+                    s.Title
 
-            }).ToList<dynamic>();
+                }).ToList<dynamic>();
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+          
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            try
+            {
+                var news = gridView1.GetRowCellValue(e.RowHandle,"ID").ToString();
+                NewsID = int.Parse(news);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

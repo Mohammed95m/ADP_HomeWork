@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="308bcdbd-5631-4e82-9f93-8891aea5964a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="13c0bbc2-59f0-40b1-9a8e-f0ed666d4de5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://desktop-kjh34th/NewsService/NewsService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NewsService.xsd" MetadataType="Schema" ID="6192d712-dfb3-49cc-b685-2166fae69960" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NewsService1.xsd" MetadataType="Schema" ID="720cdc6e-bf51-470a-883a-a927aa40d90e" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NewsService.wsdl" MetadataType="Wsdl" ID="54d96083-682d-4164-b876-ad9e373efd97" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?wsdl" />
-    <MetadataFile FileName="NewsService2.xsd" MetadataType="Schema" ID="2b9070a6-088c-436b-b4f4-ce6a595033a7" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NewsService.xsd" MetadataType="Schema" ID="46cbf75d-d4e6-412c-accf-290296be0afd" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NewsService1.xsd" MetadataType="Schema" ID="d65ca551-6a2b-4b6a-8b1b-d356974e6902" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NewsService.wsdl" MetadataType="Wsdl" ID="067a492a-838b-466b-8736-ddcb7d153a0e" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?wsdl" />
+    <MetadataFile FileName="NewsService2.xsd" MetadataType="Schema" ID="8a26be8f-c4a5-4e4a-9a06-1cc962261a1e" SourceId="1" SourceUrl="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

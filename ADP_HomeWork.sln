@@ -13,10 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingServer", "RemotingS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{492D4192-1775-44FE-9106-C46A90DD22A7}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceIIS(2)", "WCFService\WCFServiceIIS\", "{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceIIS(2)", "WCFService\WCFServiceIIS\", "{09E61B54-DEB7-499B-AB38-C13A179E343E}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{be95e610-bb13-4625-8b80-788b25eeef03}|WCFService.dll;{492D4192-1775-44FE-9106-C46A90DD22A7}|DataBase.dll;"
+		ProjectReferences = "{be95e610-bb13-4625-8b80-788b25eeef03}|WCFService.dll;{492d4192-1775-44fe-9106-c46a90dd22a7}|DataBase.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_35395"
 		Debug.AspNetCompiler.PhysicalPath = "WCFService\WCFServiceIIS\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_35395\"
@@ -38,7 +38,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceIIS(2)", "WCFServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfClient", "DXApplication1\WcfClient\WcfClient.csproj", "{64FF03F2-B9D9-423C-9514-E6749169AC6C}"
 	ProjectSection(ProjectDependencies) = postProject
-		{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866} = {4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}
+		{09E61B54-DEB7-499B-AB38-C13A179E343E} = {09E61B54-DEB7-499B-AB38-C13A179E343E}
 	EndProjectSection
 EndProject
 Global
@@ -67,10 +67,10 @@ Global
 		{492D4192-1775-44FE-9106-C46A90DD22A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{492D4192-1775-44FE-9106-C46A90DD22A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{492D4192-1775-44FE-9106-C46A90DD22A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C4D3B26-DBF3-45C9-8C49-2BC82E8BA866}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{09E61B54-DEB7-499B-AB38-C13A179E343E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E61B54-DEB7-499B-AB38-C13A179E343E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E61B54-DEB7-499B-AB38-C13A179E343E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E61B54-DEB7-499B-AB38-C13A179E343E}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{64FF03F2-B9D9-423C-9514-E6749169AC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{64FF03F2-B9D9-423C-9514-E6749169AC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64FF03F2-B9D9-423C-9514-E6749169AC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU

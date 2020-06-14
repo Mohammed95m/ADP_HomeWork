@@ -35,6 +35,7 @@ namespace ADP_HomeWork.DataBase.Tables
         [DataMember]
         public int AgencyID { get; set; }
         [ForeignKey("AgencyID")]
+        [DataMember]
         public Agency Agency { get; set; }
 
 

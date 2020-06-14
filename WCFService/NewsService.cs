@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -67,16 +68,26 @@ namespace WCFService
         {
             using (var _context = new NewsDataContext())
             {
-            
-                var data = _context.News
-                .Include("Agency")
-                   .OrderByDescending(s => s.Date).Take(10).ToList();
-                foreach (var item in data)
+                try
                 {
-                    item.TotalReads++;
+                    var data = _context.News
+                      .Include("Agency")
+                      .Include("Ranking")
+                     .OrderByDescending(s => s.Date).Take(10).ToList();
+                    foreach (var item in data)
+                    {
+                        item.TotalReads++;
+                    }
+                    _context.SaveChanges();
+                    return data;
                 }
-                _context.SaveChanges();
-                return data;
+                catch (Exception ex)
+                {
+                
+                    File.WriteAllText("C:\\logs\\log.txt", ex.Message);
+                    return null;
+                }
+               
             }
         }
 
