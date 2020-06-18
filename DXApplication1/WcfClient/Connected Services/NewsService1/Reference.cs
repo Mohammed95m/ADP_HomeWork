@@ -26,6 +26,9 @@ namespace WcfClient.NewsService1 {
         private string AbstractField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WcfClient.NewsService1.Agency AgencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int AgencyIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -68,6 +71,19 @@ namespace WcfClient.NewsService1 {
                 if ((object.ReferenceEquals(this.AbstractField, value) != true)) {
                     this.AbstractField = value;
                     this.RaisePropertyChanged("Abstract");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WcfClient.NewsService1.Agency Agency {
+            get {
+                return this.AgencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgencyField, value) != true)) {
+                    this.AgencyField = value;
+                    this.RaisePropertyChanged("Agency");
                 }
             }
         }
@@ -188,6 +204,35 @@ namespace WcfClient.NewsService1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Agency", Namespace="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables")]
+    [System.SerializableAttribute()]
+    public partial class Agency : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Rank", Namespace="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables")]
     [System.SerializableAttribute()]
     public partial class Rank : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -197,9 +242,6 @@ namespace WcfClient.NewsService1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WcfClient.NewsService1.News NewsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NewsIDField;
@@ -226,19 +268,6 @@ namespace WcfClient.NewsService1 {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WcfClient.NewsService1.News News {
-            get {
-                return this.NewsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewsField, value) != true)) {
-                    this.NewsField = value;
-                    this.RaisePropertyChanged("News");
                 }
             }
         }

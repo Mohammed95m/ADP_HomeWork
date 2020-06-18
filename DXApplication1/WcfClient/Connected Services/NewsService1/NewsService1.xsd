@@ -1,74 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://desktop-kjh34th/NewsService/NewsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" />
-  <xs:element name="GetLast10">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetLast10Response">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" minOccurs="0" name="GetLast10Result" nillable="true" type="q1:ArrayOfNews" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSimilar">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Abstract" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSimilarResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" minOccurs="0" name="GetSimilarResult" nillable="true" type="q2:News" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetBestPositive">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetBestPositiveResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" minOccurs="0" name="GetBestPositiveResult" nillable="true" type="q3:ArrayOfNews" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetBestNegative">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetBestNegativeResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" minOccurs="0" name="GetBestNegativeResult" nillable="true" type="q4:ArrayOfNews" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddRank">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-        <xs:element minOccurs="0" name="Rank" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddRankResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddRankResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ADP_HomeWork.DataBase.Tables" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfNews">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="News" nillable="true" type="tns:News" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNews" nillable="true" type="tns:ArrayOfNews" />
+  <xs:complexType name="News">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abstract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Agency" nillable="true" type="tns:Agency" />
+      <xs:element minOccurs="0" name="AgencyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ranking" nillable="true" type="tns:ArrayOfRank" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalReads" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="News" nillable="true" type="tns:News" />
+  <xs:complexType name="Agency">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Agency" nillable="true" type="tns:Agency" />
+  <xs:complexType name="ArrayOfRank">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rank" nillable="true" type="tns:Rank" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRank" nillable="true" type="tns:ArrayOfRank" />
+  <xs:complexType name="Rank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NewsID" type="xs:int" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rank" nillable="true" type="tns:Rank" />
 </xs:schema>

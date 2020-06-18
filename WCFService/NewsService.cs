@@ -37,7 +37,7 @@ namespace WCFService
                 var data = _context.News
                 .Include("Agency")
                      .Include("Ranking")
-                   .OrderBy(s => s.Ranking.Select(a => a.Number).Sum()).Take(n).ToList();
+                   .OrderBy(s => s.Ranking.Select(a => a.Number).Average()).Take(n).ToList();
                 foreach (var item in data)
                 {
                     item.TotalReads++;
@@ -54,7 +54,7 @@ namespace WCFService
                 var data = _context.News
                 .Include("Agency")
                 .Include("Ranking")
-                 .OrderByDescending(s => s.Ranking.Select(a => a.Number).Sum()).Take(n).ToList();
+                 .OrderByDescending(s => s.Ranking.Select(a => a.Number).Average()).Take(n).ToList();
                 foreach (var item in data)
                 {
                     item.TotalReads++;

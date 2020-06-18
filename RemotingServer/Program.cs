@@ -33,12 +33,7 @@ namespace RemotingServer
               DateTime.Now.Millisecond.ToString());
             Console.WriteLine("Server.Main: SingleCall Remoting is configured");
 
-            //var _Context = new NewsDataContext();
-            //foreach (var item in _Context.News)
-            //{
-            //    item.Ranking = new Collection<Rank>();
-            //}
-            //_Context.SaveChanges();
+         
             Console.ReadKey();
         }
     }

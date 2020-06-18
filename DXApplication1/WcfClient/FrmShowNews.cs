@@ -23,13 +23,22 @@ namespace RemotingClient
         {
             InitializeComponent();
             TxtAbstrack.Text = news?.Abstract;
-            TxtRating.Text = ((news?.Ranking.Select(a => a.Number).Average()) ?? 0).ToString();
+            TxtRating.Text = ((news?.Ranking.Select(a => a.Number).DefaultIfEmpty().Average()) ?? 0).ToString();
             TxtText.Text = news?.Text;
             TxtTitle.Text = news?.Title;
-            if (news?.ImagePath != null)
+            try
             {
-                pictureBox1.Image = Image.FromFile(news?.ImagePath);
+                if (news?.ImagePath != null)
+                {
+                    pictureBox1.Image = Image.FromFile(news?.ImagePath);
+                }
             }
+            catch (Exception ex)
+            {
+
+             
+            }
+           
             
            
         }
